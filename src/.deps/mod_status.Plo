@@ -75,7 +75,7 @@ mod_status.lo: mod_status.c server.h base.h ../config.h settings.h \
  /usr/include/i386-linux-gnu/bits/fcntl2.h /usr/include/errno.h \
  /usr/include/i386-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/i386-linux-gnu/asm/errno.h /usr/include/asm-generic/errno.h \
- /usr/include/asm-generic/errno-base.h version.h versionstamp.h
+ /usr/include/asm-generic/errno-base.h version.h
 
 server.h:
 
@@ -318,5 +318,3 @@ inet_ntop_cache.h:
 /usr/include/asm-generic/errno-base.h:
 
 version.h:
-
-versionstamp.h:

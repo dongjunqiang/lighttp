@@ -75,7 +75,7 @@ mod_dirlisting.lo: mod_dirlisting.c base.h ../config.h settings.h \
  /usr/include/errno.h /usr/include/i386-linux-gnu/bits/errno.h \
  /usr/include/linux/errno.h /usr/include/i386-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- version.h versionstamp.h
+ version.h
 
 base.h:
 
@@ -320,5 +320,3 @@ stream.h:
 /usr/include/asm-generic/errno-base.h:
 
 version.h:
-
-versionstamp.h:

@@ -78,14 +78,14 @@ am__can_run_installinfo = \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/sknown/git/lighttp/missing --run aclocal-1.11
+ACLOCAL = ${SHELL} /home/sknown/git/lighttp.org/missing --run aclocal-1.11
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
 AR = ar
 ATTR_LIB = 
-AUTOCONF = ${SHELL} /home/sknown/git/lighttp/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/sknown/git/lighttp/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/sknown/git/lighttp/missing --run automake-1.11
+AUTOCONF = ${SHELL} /home/sknown/git/lighttp.org/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/sknown/git/lighttp.org/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/sknown/git/lighttp.org/missing --run automake-1.11
 AWK = mawk
 BZ_LIB = 
 CC = gcc
@@ -130,7 +130,7 @@ LN_S = ln -s
 LTLIBOBJS = 
 LUA_CFLAGS = 
 LUA_LIBS = 
-MAKEINFO = ${SHELL} /home/sknown/git/lighttp/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/sknown/git/lighttp.org/missing --run makeinfo
 MANIFEST_TOOL = :
 MEMCACHE_LIB = 
 MKDIR_P = /bin/mkdir -p
@@ -170,10 +170,10 @@ VERSION = 1.4.32
 XML_CFLAGS = 
 XML_LIBS = 
 Z_LIB = 
-abs_builddir = /home/sknown/git/lighttp/tests/docroot/123
-abs_srcdir = /home/sknown/git/lighttp/tests/docroot/123
-abs_top_builddir = /home/sknown/git/lighttp
-abs_top_srcdir = /home/sknown/git/lighttp
+abs_builddir = /home/sknown/git/lighttp.org/tests/docroot/123
+abs_srcdir = /home/sknown/git/lighttp.org/tests/docroot/123
+abs_top_builddir = /home/sknown/git/lighttp.org
+abs_top_srcdir = /home/sknown/git/lighttp.org
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
@@ -202,7 +202,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/sknown/git/lighttp/install-sh
+install_sh = ${SHELL} /home/sknown/git/lighttp.org/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -211,7 +211,7 @@ mandir = ${datarootdir}/man
 mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /home/sknown/lighttpd_install
+prefix = /home/sknown/git/lighttpd_install
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
@@ -230,36 +230,6 @@ EXTRA_DIST = 12345.html 12345.txt dummyfile.bla phpinfo.php
 all: all-am
 
 .SUFFIXES:
-$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
-	@for dep in $?; do \
-	  case '$(am__configure_deps)' in \
-	    *$$dep*) \
-	      ( cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh ) \
-	        && { if test -f $@; then exit 0; else break; fi; }; \
-	      exit 1;; \
-	  esac; \
-	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign tests/docroot/123/Makefile'; \
-	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign tests/docroot/123/Makefile
-.PRECIOUS: Makefile
-Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
-	@case '$?' in \
-	  *config.status*) \
-	    cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh;; \
-	  *) \
-	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)'; \
-	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe);; \
-	esac;
-
-$(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
-	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
-
-$(top_srcdir)/configure:  $(am__configure_deps)
-	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
-$(ACLOCAL_M4):  $(am__aclocal_m4_deps)
-	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
-$(am__aclocal_m4_deps):
 
 mostlyclean-libtool:
 	-rm -f *.lo

@@ -51,8 +51,8 @@ POST_UNINSTALL = :
 build_triplet = i686-pc-linux-gnu
 host_triplet = i686-pc-linux-gnu
 target_triplet = i686-pc-linux-gnu
-#check_PROGRAMS = fcgi-auth$(EXEEXT) \
-#	fcgi-responder$(EXEEXT)
+check_PROGRAMS = fcgi-auth$(EXEEXT) \
+	fcgi-responder$(EXEEXT)
 subdir = tests
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -67,15 +67,15 @@ CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__fcgi_auth_SOURCES_DIST = fcgi-auth.c
-#am_fcgi_auth_OBJECTS = fcgi-auth.$(OBJEXT)
+am_fcgi_auth_OBJECTS = fcgi-auth.$(OBJEXT)
 fcgi_auth_OBJECTS = $(am_fcgi_auth_OBJECTS)
 fcgi_auth_DEPENDENCIES =
 AM_V_lt = $(am__v_lt_$(V))
 am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
 am__v_lt_0 = --silent
 am__fcgi_responder_SOURCES_DIST = fcgi-responder.c
-#am_fcgi_responder_OBJECTS =  \
-#	fcgi-responder.$(OBJEXT)
+am_fcgi_responder_OBJECTS =  \
+	fcgi-responder.$(OBJEXT)
 fcgi_responder_OBJECTS = $(am_fcgi_responder_OBJECTS)
 fcgi_responder_DEPENDENCIES =
 DEFAULT_INCLUDES = -I. -I$(top_builddir)
@@ -155,14 +155,14 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-ACLOCAL = ${SHELL} /home/sknown/git/lighttp/missing --run aclocal-1.11
+ACLOCAL = ${SHELL} /home/sknown/git/lighttp.org/missing --run aclocal-1.11
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
 AR = ar
 ATTR_LIB = 
-AUTOCONF = ${SHELL} /home/sknown/git/lighttp/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/sknown/git/lighttp/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/sknown/git/lighttp/missing --run automake-1.11
+AUTOCONF = ${SHELL} /home/sknown/git/lighttp.org/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/sknown/git/lighttp.org/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/sknown/git/lighttp.org/missing --run automake-1.11
 AWK = mawk
 BZ_LIB = 
 CC = gcc
@@ -207,7 +207,7 @@ LN_S = ln -s
 LTLIBOBJS = 
 LUA_CFLAGS = 
 LUA_LIBS = 
-MAKEINFO = ${SHELL} /home/sknown/git/lighttp/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/sknown/git/lighttp.org/missing --run makeinfo
 MANIFEST_TOOL = :
 MEMCACHE_LIB = 
 MKDIR_P = /bin/mkdir -p
@@ -247,10 +247,10 @@ VERSION = 1.4.32
 XML_CFLAGS = 
 XML_LIBS = 
 Z_LIB = 
-abs_builddir = /home/sknown/git/lighttp/tests
-abs_srcdir = /home/sknown/git/lighttp/tests
-abs_top_builddir = /home/sknown/git/lighttp
-abs_top_srcdir = /home/sknown/git/lighttp
+abs_builddir = /home/sknown/git/lighttp.org/tests
+abs_srcdir = /home/sknown/git/lighttp.org/tests
+abs_top_builddir = /home/sknown/git/lighttp.org
+abs_top_srcdir = /home/sknown/git/lighttp.org
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
@@ -279,7 +279,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/sknown/git/lighttp/install-sh
+install_sh = ${SHELL} /home/sknown/git/lighttp.org/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -288,7 +288,7 @@ mandir = ${datarootdir}/man
 mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /home/sknown/lighttpd_install
+prefix = /home/sknown/git/lighttpd_install
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
@@ -306,10 +306,10 @@ top_srcdir = ..
 
 # lighttpd.conf and conformance.pl expect this directory
 testdir = $(srcdir)/tmp/lighttpd/
-#fcgi_auth_SOURCES = fcgi-auth.c
-#fcgi_auth_LDADD = -lfcgi
-#fcgi_responder_SOURCES = fcgi-responder.c
-#fcgi_responder_LDADD = -lfcgi
+fcgi_auth_SOURCES = fcgi-auth.c
+fcgi_auth_LDADD = -lfcgi
+fcgi_responder_SOURCES = fcgi-responder.c
+fcgi_responder_LDADD = -lfcgi
 TESTS = \
 	prepare.sh \
 	run-tests.pl \
@@ -366,36 +366,6 @@ all: all-recursive
 
 .SUFFIXES:
 .SUFFIXES: .c .lo .o .obj
-$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
-	@for dep in $?; do \
-	  case '$(am__configure_deps)' in \
-	    *$$dep*) \
-	      ( cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh ) \
-	        && { if test -f $@; then exit 0; else break; fi; }; \
-	      exit 1;; \
-	  esac; \
-	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign tests/Makefile'; \
-	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign tests/Makefile
-.PRECIOUS: Makefile
-Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
-	@case '$?' in \
-	  *config.status*) \
-	    cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh;; \
-	  *) \
-	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)'; \
-	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe);; \
-	esac;
-
-$(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
-	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
-
-$(top_srcdir)/configure:  $(am__configure_deps)
-	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
-$(ACLOCAL_M4):  $(am__aclocal_m4_deps)
-	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
-$(am__aclocal_m4_deps):
 
 clean-checkPROGRAMS:
 	@list='$(check_PROGRAMS)'; test -n "$$list" || exit 0; \

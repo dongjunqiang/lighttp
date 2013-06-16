@@ -137,14 +137,14 @@ GZIP_ENV = --best
 distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
-ACLOCAL = ${SHELL} /home/sknown/git/lighttp/missing --run aclocal-1.11
+ACLOCAL = ${SHELL} /home/sknown/git/lighttp.org/missing --run aclocal-1.11
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
 AR = ar
 ATTR_LIB = 
-AUTOCONF = ${SHELL} /home/sknown/git/lighttp/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/sknown/git/lighttp/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/sknown/git/lighttp/missing --run automake-1.11
+AUTOCONF = ${SHELL} /home/sknown/git/lighttp.org/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/sknown/git/lighttp.org/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/sknown/git/lighttp.org/missing --run automake-1.11
 AWK = mawk
 BZ_LIB = 
 CC = gcc
@@ -189,7 +189,7 @@ LN_S = ln -s
 LTLIBOBJS = 
 LUA_CFLAGS = 
 LUA_LIBS = 
-MAKEINFO = ${SHELL} /home/sknown/git/lighttp/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/sknown/git/lighttp.org/missing --run makeinfo
 MANIFEST_TOOL = :
 MEMCACHE_LIB = 
 MKDIR_P = /bin/mkdir -p
@@ -229,10 +229,10 @@ VERSION = 1.4.32
 XML_CFLAGS = 
 XML_LIBS = 
 Z_LIB = 
-abs_builddir = /home/sknown/git/lighttp
-abs_srcdir = /home/sknown/git/lighttp
-abs_top_builddir = /home/sknown/git/lighttp
-abs_top_srcdir = /home/sknown/git/lighttp
+abs_builddir = /home/sknown/git/lighttp.org
+abs_srcdir = /home/sknown/git/lighttp.org
+abs_top_builddir = /home/sknown/git/lighttp.org
+abs_top_srcdir = /home/sknown/git/lighttp.org
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
@@ -261,7 +261,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/sknown/git/lighttp/install-sh
+install_sh = ${SHELL} /home/sknown/git/lighttp.org/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -270,7 +270,7 @@ mandir = ${datarootdir}/man
 mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /home/sknown/lighttpd_install
+prefix = /home/sknown/git/lighttpd_install
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
@@ -293,48 +293,11 @@ all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
 .SUFFIXES:
-am--refresh: Makefile
-	@:
-$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
-	@for dep in $?; do \
-	  case '$(am__configure_deps)' in \
-	    *$$dep*) \
-	      echo ' cd $(srcdir) && $(AUTOMAKE) --foreign'; \
-	      $(am__cd) $(srcdir) && $(AUTOMAKE) --foreign \
-		&& exit 0; \
-	      exit 1;; \
-	  esac; \
-	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign Makefile'; \
-	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign Makefile
-.PRECIOUS: Makefile
-Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
-	@case '$?' in \
-	  *config.status*) \
-	    echo ' $(SHELL) ./config.status'; \
-	    $(SHELL) ./config.status;; \
-	  *) \
-	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)'; \
-	    cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe);; \
-	esac;
-
-$(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
-	$(SHELL) ./config.status --recheck
-
-$(top_srcdir)/configure:  $(am__configure_deps)
-	$(am__cd) $(srcdir) && $(AUTOCONF)
-$(ACLOCAL_M4):  $(am__aclocal_m4_deps)
-	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
-$(am__aclocal_m4_deps):
-
-config.h: stamp-h1
+config.h:
 	@if test ! -f $@; then rm -f stamp-h1; else :; fi
 	@if test ! -f $@; then $(MAKE) $(AM_MAKEFLAGS) stamp-h1; else :; fi
 
-stamp-h1: $(srcdir)/config.h.in $(top_builddir)/config.status
-	@rm -f stamp-h1
-	cd $(top_builddir) && $(SHELL) ./config.status config.h
+
 $(srcdir)/config.h.in:  $(am__configure_deps) 
 	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
 	rm -f stamp-h1

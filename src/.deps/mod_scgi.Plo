@@ -93,7 +93,7 @@ mod_scgi.lo: mod_scgi.c buffer.h ../config.h settings.h \
  /usr/include/i386-linux-gnu/bits/sigthread.h \
  /usr/include/i386-linux-gnu/sys/wait.h \
  /usr/include/i386-linux-gnu/sys/resource.h \
- /usr/include/i386-linux-gnu/bits/resource.h version.h versionstamp.h
+ /usr/include/i386-linux-gnu/bits/resource.h version.h
 
 buffer.h:
 
@@ -386,5 +386,3 @@ inet_ntop_cache.h:
 /usr/include/i386-linux-gnu/bits/resource.h:
 
 version.h:
-
-versionstamp.h:

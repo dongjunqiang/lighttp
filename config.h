@@ -44,7 +44,7 @@
 /* #undef HAVE_FASTCGI_FASTCGI_H */
 
 /* Define to 1 if you have the <fastcgi.h> header file. */
-/* #undef HAVE_FASTCGI_H */
+#define HAVE_FASTCGI_H 1
 
 /* Define to 1 if you have the <fcntl.h> header file. */
 #define HAVE_FCNTL_H 1

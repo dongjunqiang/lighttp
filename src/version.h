@@ -1,11 +1,7 @@
 #ifndef _VERSION_H_
 #define _VERSION_H_
 
-#ifdef HAVE_VERSION_H
-# include "versionstamp.h"
-#else
-# define REPO_VERSION ""
-#endif
+#define REPO_VERSION "-devel-7d5ee01"
 
 #define PACKAGE_DESC PACKAGE_NAME "/" PACKAGE_VERSION REPO_VERSION
 

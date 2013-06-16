@@ -93,7 +93,7 @@ mod_fastcgi.lo: mod_fastcgi.c buffer.h ../config.h settings.h \
  /usr/include/i386-linux-gnu/bits/sigthread.h fastcgi.h \
  /usr/include/i386-linux-gnu/sys/wait.h \
  /usr/include/i386-linux-gnu/sys/resource.h \
- /usr/include/i386-linux-gnu/bits/resource.h version.h versionstamp.h
+ /usr/include/i386-linux-gnu/bits/resource.h version.h
 
 buffer.h:
 
@@ -392,5 +392,3 @@ fastcgi.h:
 /usr/include/i386-linux-gnu/bits/resource.h:
 
 version.h:
-
-versionstamp.h:

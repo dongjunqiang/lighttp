@@ -71,7 +71,7 @@ server.o: server.c server.h base.h ../config.h settings.h \
  /usr/include/i386-linux-gnu/bits/unistd.h network.h log.h response.h \
  /usr/include/i386-linux-gnu/bits/timex.h request.h http_chunk.h \
  connections.h stat_cache.h plugin.h joblist.h network_backends.h \
- /usr/include/i386-linux-gnu/sys/sendfile.h version.h versionstamp.h \
+ /usr/include/i386-linux-gnu/sys/sendfile.h version.h \
  /usr/include/errno.h /usr/include/i386-linux-gnu/bits/errno.h \
  /usr/include/linux/errno.h /usr/include/i386-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
@@ -333,8 +333,6 @@ network_backends.h:
 /usr/include/i386-linux-gnu/sys/sendfile.h:
 
 version.h:
-
-versionstamp.h:
 
 /usr/include/errno.h:
 
